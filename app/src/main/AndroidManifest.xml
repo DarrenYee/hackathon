@@ -12,7 +12,7 @@
         <activity android:name=".LoginScreens.PasswordRetrievalActivity"></activity>
         <activity android:name=".LoginScreens.SignupActivity" />
         <activity android:name=".LoginScreens.Login" />
-        <activity android:name=".CompletedQuestionView" />
+        <activity android:name=".CompletedQuestion.CompletedQuestionView" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
