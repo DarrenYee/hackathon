@@ -8,15 +8,20 @@ import android.os.Bundle;
 
 import com.example.hackathon.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CompletedQuestionView extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     CompletedQuestionAdapter adapter;
+    List<CompletedQuestion> questionList = new ArrayList<CompletedQuestion>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.completed_question);
 
         recyclerView = findViewById(R.id.completed_ques_view);
@@ -27,5 +32,6 @@ public class CompletedQuestionView extends AppCompatActivity {
         adapter = new CompletedQuestionAdapter(this);
         recyclerView.setAdapter(adapter);
 
+        adapter.setData(questionList);
     }
 }

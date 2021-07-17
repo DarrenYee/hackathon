@@ -45,7 +45,9 @@ public class CompletedQuestionAdapter extends RecyclerView.Adapter<CompletedQues
 
     @Override
     public int getItemCount() {
-        return 0;
+        {
+            return cardList.size();
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
