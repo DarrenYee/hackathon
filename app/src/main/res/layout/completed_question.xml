@@ -8,11 +8,41 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/completed_ques_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="414dp"
+        android:layout_height="669dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/keyWordField" />
+
+    <TextView
+        android:id="@+id/keyWord"
+        android:layout_width="64dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:text="KeyWord:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/keyWordField"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/keyWordField"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter your keyword here"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="91dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/keyWordField"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        tools:layout_editor_absoluteY="19dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
