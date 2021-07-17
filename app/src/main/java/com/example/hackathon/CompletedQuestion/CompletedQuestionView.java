@@ -1,17 +1,25 @@
 package com.example.hackathon.CompletedQuestion;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.hackathon.R;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompletedQuestionView extends AppCompatActivity {
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -22,7 +30,11 @@ public class CompletedQuestionView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.completed_question);
+        setContentView(R.layout.drawer_layout);
+
+        CompletedQuestion Q1 = new CompletedQuestion("yjsb", "yes");
+        questionList.add(Q1);
+
 
         recyclerView = findViewById(R.id.completed_ques_view);
 
@@ -33,5 +45,36 @@ public class CompletedQuestionView extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         adapter.setData(questionList);
+
+        // toolbar
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        // navigation menu
+        drawerLayout = findViewById(R.id.drawerLayout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.nav_open, R.string.nav_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(new myNavListener());
+    }
+
+    class myNavListener implements NavigationView.OnNavigationItemSelectedListener {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int id = item.getItemId();
+
+            if(id == R.id.AQ){
+
+            }
+            else if(id == R.id.SA){
+
+            }
+
+            return true;
+        }
     }
 }
