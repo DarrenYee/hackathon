@@ -21,7 +21,8 @@
         android:layout_width="64dp"
         android:layout_height="27dp"
         android:layout_marginStart="4dp"
-        android:text="KeyWord:"
+        android:fontFamily="@font/fira_sans_light_italic"
+        android:text="Keyword:"
         app:layout_constraintBaseline_toBaselineOf="@+id/keyWordField"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -32,6 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:ems="10"
+        android:fontFamily="@font/fira_sans_light_italic"
         android:hint="Enter your keyword here"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"

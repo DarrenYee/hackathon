@@ -51,7 +51,6 @@ public class SignupActivity extends AppCompatActivity {
                             System.out.println(email);
                             Toast.makeText(SignupActivity.this,"Registration failed! Please choose a better password (Combination of numeric and alphabets) or a different email.",Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
             }
