@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathon">
-        <activity android:name=".UploadAnswer"></activity>
-        <activity android:name=".AnsActivity" />
+        <activity android:name=".ShowAsked.UploadAnswer"></activity>
+        <activity android:name=".ShowAsked.AnsActivity" />
         <activity android:name=".AskActivity" />
         <activity android:name=".LoginScreens.SignupActivity" />
         <activity android:name=".LoginScreens.Login" />

@@ -1,4 +1,4 @@
-package com.example.hackathon;
+package com.example.hackathon.ShowAsked;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hackathon.CompletedQuestion.CompletedQuestion;
-import com.example.hackathon.CompletedQuestion.CompletedQuestionAdapter;
+import com.example.hackathon.R;
 
 import java.util.ArrayList;
 import java.util.List;
