@@ -75,7 +75,6 @@ public class AnsActivity extends AppCompatActivity {
 
         adapter = new AnsAdapter(this);
         recyclerView.setAdapter(adapter);
-        System.out.println(ansList);
         adapter.setData(ansList);
 
     }

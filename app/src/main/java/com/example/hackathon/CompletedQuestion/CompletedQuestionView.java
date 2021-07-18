@@ -1,6 +1,7 @@
 package com.example.hackathon.CompletedQuestion;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,19 +11,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.hackathon.ShowAsked.AnsActivity;
 import com.example.hackathon.AskActivity;
 import com.example.hackathon.R;
+import com.example.hackathon.ShowAsked.AskedQuestions;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class CompletedQuestionView extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawerLayout;
+    DatabaseReference myRef;
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -34,6 +45,40 @@ public class CompletedQuestionView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.drawer_layout);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("hackathon/completed");
+
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                CompletedQuestion value = dataSnapshot.getValue(CompletedQuestion.class);
+                questionList.add(value);
+                Log.d(TAG, "Value is: " + value);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
 
         CompletedQuestion Q1 = new CompletedQuestion("yjsb", "yes");
         questionList.add(Q1);

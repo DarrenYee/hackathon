@@ -25,16 +25,17 @@ public class AskActivity extends AppCompatActivity {
     }
 
     public String readInput(){
-        EditText userInput = findViewById(R.id.userInput);
+        EditText userInput = findViewById(R.id.replyInput);
         return userInput.getText().toString();
     }
 
-    public void submit(View view){
+    public void submitQuestion(View view){
         AskedQuestions question = new AskedQuestions(readInput());
         myRef.push().setValue(question);
         Toast toast = Toast.makeText(this,
                 "Question submitted successfully!",
                 Toast.LENGTH_SHORT);
         toast.show();
+        finish();
     }
 }

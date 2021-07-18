@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
 
     <EditText
-        android:id="@+id/userInput"
+        android:id="@+id/replyInput"
         android:layout_width="329dp"
         android:layout_height="298dp"
         android:ems="10"
@@ -39,7 +39,7 @@
         android:text="Ask a Question"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/userInput"
+        app:layout_constraintBottom_toTopOf="@+id/replyInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,14 +56,14 @@
         app:srcCompat="@mipmap/ask_foreground" />
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/submitAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="submit"
+        android:onClick="submitQuestion"
         android:text="Submit Question"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInput" />
+        app:layout_constraintTop_toBottomOf="@+id/replyInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,8 @@ public class CompletedQuestion {
         this.answer = answer;
     }
 
+    public CompletedQuestion(){}
+
     public void setId(@NonNull int id) {
         this.id = id;
     }
