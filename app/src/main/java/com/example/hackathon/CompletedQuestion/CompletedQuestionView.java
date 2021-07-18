@@ -80,8 +80,18 @@ public class CompletedQuestionView extends AppCompatActivity {
             }
         });
 
-        CompletedQuestion Q1 = new CompletedQuestion("yjsb", "yes");
+        CompletedQuestion Q1 = new CompletedQuestion("Tell me about yourself.", "Start by describing your background with a summary of your most impressive responsibilities, next briefly summarize your previous experience with key achievements, lastly express how you found the new job and why it's a good fit for you and your goals");
         questionList.add(Q1);
+        CompletedQuestion Q2 = new CompletedQuestion("How would you describe yourself", "With this question, your interviewer wants to learn how your qualities and characteristics align with the skills they believe are required to succeed in the role. To answer this question, pick one to a few personal characteristics and elaborate on them with examples.");
+        questionList.add(Q2);
+        CompletedQuestion Q3 = new CompletedQuestion("What makes you unique", "Assets the employers finds valuable, ways you've been successful in previous roles, traits or skills you've been praised for.");
+        questionList.add(Q3);
+        CompletedQuestion Q4 = new CompletedQuestion("Why do you want to work here?", "Interviewers often ask this question to determine whether or not you took the time to research the company and think critically about whether you’re a good fit. The best way to prepare for this question is to do your homework and learn about the products, services, mission, history and culture of this workplace. In your answer, mention the aspects of the company that appeals to you and aligns with your values and career goals.");
+        questionList.add(Q4);
+        CompletedQuestion Q5 = new CompletedQuestion("What interests you about this role?", "Study the job description carefully and compare its requirements to your skills and experience. Choose a few responsibilities you particularly enjoy or excel at and focus on those in your answer.");
+        questionList.add(Q5);
+        CompletedQuestion Q6 = new CompletedQuestion("How do you handle stress?", "Spend some time thinking about how you approach stress and provide an example that communicates your ability to persevere in stressful situations.");
+        questionList.add(Q6);
 
         recyclerView = findViewById(R.id.completed_ques_view);
 
@@ -96,6 +106,7 @@ public class CompletedQuestionView extends AppCompatActivity {
         // toolbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Interview Helper");
 
 
         // navigation menu
