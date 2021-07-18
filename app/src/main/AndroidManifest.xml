@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackathon">
+        <activity android:name=".AskActivity"></activity>
         <activity android:name=".LoginScreens.SignupActivity" />
         <activity android:name=".LoginScreens.Login" />
         <activity android:name=".CompletedQuestion.CompletedQuestionView" />
