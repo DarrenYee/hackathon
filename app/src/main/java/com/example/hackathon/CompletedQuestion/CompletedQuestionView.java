@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.hackathon.AnsActivity;
 import com.example.hackathon.AskActivity;
 import com.example.hackathon.R;
 import com.google.android.material.navigation.NavigationView;
@@ -36,7 +37,6 @@ public class CompletedQuestionView extends AppCompatActivity {
 
         CompletedQuestion Q1 = new CompletedQuestion("yjsb", "yes");
         questionList.add(Q1);
-
 
         recyclerView = findViewById(R.id.completed_ques_view);
 
@@ -74,7 +74,8 @@ public class CompletedQuestionView extends AppCompatActivity {
                 startActivity(intent);
             }
             else if(id == R.id.SA){
-
+                Intent intent = new Intent(CompletedQuestionView.this, AnsActivity.class);
+                startActivity(intent);
             }
 
             return true;
