@@ -19,16 +19,15 @@ public class AskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ask);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("hackathon/ask");
+        myRef = database.getReference("hackathon/ask");
     }
 
-//    public String readInput(){
-//        EditText userInput = findViewById(R.id.userInput);
-//        return userInput.getText().toString();
-//    }
+    public String readInput(){
+        EditText userInput = findViewById(R.id.userInput);
+        return userInput.getText().toString();
+    }
 
     public void submit(View view){
-//        myRef.push().setValue(readInput());
-        myRef.push().setValue("yjsb");
+        myRef.push().setValue(readInput());
     }
 }

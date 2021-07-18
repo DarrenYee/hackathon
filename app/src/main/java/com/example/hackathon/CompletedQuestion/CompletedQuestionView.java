@@ -8,9 +8,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.hackathon.AskActivity;
 import com.example.hackathon.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -68,7 +70,8 @@ public class CompletedQuestionView extends AppCompatActivity {
             int id = item.getItemId();
 
             if(id == R.id.AQ){
-
+                Intent intent = new Intent(CompletedQuestionView.this, AskActivity.class);
+                startActivity(intent);
             }
             else if(id == R.id.SA){
 
