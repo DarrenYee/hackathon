@@ -13,8 +13,8 @@
     tools:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="439dp"
-        android:layout_height="135dp">
+        android:layout_width="395dp"
+        android:layout_height="144dp">
 
         <TextView
             android:id="@+id/asked_ques"

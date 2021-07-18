@@ -73,7 +73,7 @@ public class CompletedQuestionView extends AppCompatActivity {
                 Intent intent = new Intent(CompletedQuestionView.this, AskActivity.class);
                 startActivity(intent);
             }
-            else if(id == R.id.SA){
+            else if(id == R.id.VQ){
                 Intent intent = new Intent(CompletedQuestionView.this, AnsActivity.class);
                 startActivity(intent);
             }

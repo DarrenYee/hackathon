@@ -1,5 +1,7 @@
 package com.example.hackathon;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,9 +11,11 @@ import android.util.Log;
 
 import com.example.hackathon.CompletedQuestion.CompletedQuestion;
 import com.example.hackathon.CompletedQuestion.CompletedQuestionAdapter;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -25,22 +29,38 @@ public class AnsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     AnsAdapter adapter;
-    List<String> ansList = new ArrayList<String>();
+    List<AskedQuestions> ansList = new ArrayList<AskedQuestions>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ans);
+        setContentView(R.layout.asked_question_recycler);
 
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("hackathon/ask");
+
+        myRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                AskedQuestions value = dataSnapshot.getValue(AskedQuestions.class);
                 ansList.add(value);
                 Log.d(TAG, "Value is: " + value);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
             }
 
             @Override
@@ -57,7 +77,7 @@ public class AnsActivity extends AppCompatActivity {
 
         adapter = new AnsAdapter(this);
         recyclerView.setAdapter(adapter);
-
+        System.out.println(ansList);
         adapter.setData(ansList);
 
     }

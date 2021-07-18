@@ -17,12 +17,12 @@ import java.util.List;
 
 public class AnsAdapter extends RecyclerView.Adapter<AnsAdapter.ViewHolder>{
 
-    List<String> cardList = new ArrayList<String>();
+    List<AskedQuestions> cardList = new ArrayList<AskedQuestions>();
     private Context context;
 
     public AnsAdapter(Context context){this.context = context;}
 
-    public void setData(List<String> cardList) {
+    public void setData(List<AskedQuestions> cardList) {
         this.cardList = cardList;
     }
 
@@ -37,7 +37,7 @@ public class AnsAdapter extends RecyclerView.Adapter<AnsAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull AnsAdapter.ViewHolder holder, int position) {
-        holder.question.setText(cardList.get(position));
+        holder.question.setText(cardList.get(position).getQuestion());
     }
 
     @Override
@@ -53,7 +53,7 @@ public class AnsAdapter extends RecyclerView.Adapter<AnsAdapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.view = itemView;
-            question =itemView.findViewById(R.id.asked_ques);
+            question = itemView.findViewById(R.id.asked_ques);
         }
     }
 }

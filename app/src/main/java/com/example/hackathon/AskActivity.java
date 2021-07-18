@@ -29,7 +29,8 @@ public class AskActivity extends AppCompatActivity {
     }
 
     public void submit(View view){
-        myRef.push().setValue(readInput());
+        AskedQuestions question = new AskedQuestions(readInput());
+        myRef.push().setValue(question);
         Toast toast = Toast.makeText(this,
                 "Question submitted successfully!",
                 Toast.LENGTH_SHORT);

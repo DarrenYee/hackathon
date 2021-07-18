@@ -5,6 +5,6 @@
         android:id="@+id/AQ"
         android:title="Ask Question" />
     <item
-        android:id="@+id/SA"
-        android:title="Sample Answer" />
+        android:id="@+id/VQ"
+        android:title="View Questions" />
 </menu>
