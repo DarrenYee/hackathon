@@ -7,4 +7,5 @@
     <item
         android:id="@+id/VQ"
         android:title="View Questions" />
+    <item android:title="Virtual Interview" />
 </menu>
